@@ -1,6 +1,10 @@
 """
-snakes and ladders
-possible classes: dice,turn,player(incl score and turn)
+A simple game of snakes and ladders.
+Asks for number of players and their names.
+Automated play.
+
+Written to learn about python programming.
+
 """
 
 import random
