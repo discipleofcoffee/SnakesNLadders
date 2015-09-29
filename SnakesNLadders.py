@@ -211,7 +211,7 @@ if __name__ == '__main__':
     allPlayers = []
     # loop to get player names and initialize positions to 0.
     for playerCounter in range(0, playerCount):
-        print('Enter player', playerCounter + 1, 'name:')
+        print(str(playerCounter + 1)+'enter your name:')
         playerNameTemp = input()
         allPlayers.append(Player(playerName=playerNameTemp, playerPosition=0))
 
