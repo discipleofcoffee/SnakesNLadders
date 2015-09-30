@@ -209,6 +209,7 @@ if __name__ == '__main__':
     game = GameMaster()
     playerCount = game.getPlayerCount()
     allPlayers = []
+
     # loop to get player names and initialize positions to 0.
     for playerCounter in range(0, playerCount):
         print('Enter player', playerCounter + 1, 'name:')
@@ -216,18 +217,23 @@ if __name__ == '__main__':
         allPlayers.append(Player(playerName=playerNameTemp, playerPosition=0))
 
     for turnCounter in range(0, MAXPOSITION):
+
         for playerCounter in range(0, playerCount):
+
             rolledValue = dice.rollDice()
             newPosition = rolledValue + allPlayers[playerCounter].getPlayer('position')
             allPlayers[playerCounter].movePlayer(newPosition)
             currentPlayerPosition = allPlayers[playerCounter].getPlayer('position')
             rePosition = game.snlReposition(currentPlayerPosition)
+
             if rePosition > currentPlayerPosition:
                 print('', allPlayers[playerCounter].getPlayer('name'), 'found a ladder at',
                       currentPlayerPosition, '! Moving to', rePosition, '!')
                 allPlayers[playerCounter].movePlayer(rePosition)
+
             elif rePosition < currentPlayerPosition:
                 print('', allPlayers[playerCounter].getPlayer('name'), 'was bitten by a snake at',
                       currentPlayerPosition, '! Moving to', rePosition, '!')
                 allPlayers[playerCounter].movePlayer(rePosition)
+
             game.winCheck(allPlayers[playerCounter].getPlayer('outcome'), allPlayers[playerCounter].getPlayer('name'))
