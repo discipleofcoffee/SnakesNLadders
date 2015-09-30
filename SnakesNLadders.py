@@ -205,7 +205,7 @@ class Player(object):
 if __name__ == '__main__':
 
     MAXPOSITION = (100)
-    dice = Dice(customDice=0, diceCount=1, diceSides=6)
+    dice = Dice()
     game = GameMaster()
     playerCount = game.getPlayerCount()
     allPlayers = []
@@ -214,7 +214,7 @@ if __name__ == '__main__':
     for playerCounter in range(0, playerCount):
         print('Enter player', playerCounter + 1, 'name:')
         playerNameTemp = input()
-        allPlayers.append(Player(playerName=playerNameTemp, playerPosition=0))
+        allPlayers.append(Player(playerName=playerNameTemp))
 
     for turnCounter in range(0, MAXPOSITION):
 
