@@ -1,4 +1,5 @@
 # snakesnladders
+Uses Python 3.x
 
 A simple game of snakes and ladders.
 Asks for number of players and their names.
